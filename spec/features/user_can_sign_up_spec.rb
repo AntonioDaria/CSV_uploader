@@ -8,7 +8,7 @@ RSpec.feature 'Sign up, log in, log out', type: :feature do
     expect(page).to have_selector('#user_password')
   end
 
-  scenario 'a user can sign up' do
+  scenario 'A user can sign up' do
       sign_up('antonio@gmail.com')
       expect(page).to have_content('Welcome! You have signed up successfully.')
     end
@@ -21,6 +21,13 @@ RSpec.feature 'Sign up, log in, log out', type: :feature do
     fill_in('user_password_confirmation', with: 'password1234')
     click_button('Sign up')
     expect(page).to have_content('Email is invalid')
+  end
+
+  scenario 'A user can log out' do
+    sign_up('antonio@gmail.com')
+    expect(page).to have_content('Welcome! You have signed up successfully.')
+    click_link('Logout')
+    expect(page).to have_content('Log in')
   end
 
 end
