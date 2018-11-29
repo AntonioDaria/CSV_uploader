@@ -13,4 +13,14 @@ RSpec.feature 'Sign up, log in, log out', type: :feature do
       expect(page).to have_content('Welcome! You have signed up successfully.')
     end
 
+    scenario 'Gets an error message if the email is invalid' do
+    visit('/')
+    click_link('Sign up')
+    fill_in('user_email', with: 'antoniogmail.com')
+    fill_in('user_password', with: 'password1234')
+    fill_in('user_password_confirmation', with: 'password1234')
+    click_button('Sign up')
+    expect(page).to have_content('Email is invalid')
+  end
+
 end
