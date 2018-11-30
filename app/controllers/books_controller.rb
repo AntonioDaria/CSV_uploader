@@ -5,6 +5,6 @@ class BooksController < ApplicationController
 
   def import
     Book.import(params[:file])
-    redirect_to root_url, notice: "Products imported."
+    redirect_to root_url, notice: "File imported."
   end
 end
