@@ -29,3 +29,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+# Ignore DS
+**/.DS_Store
+
+# Ignore test-related files
+/coverage/
+/coverage.data

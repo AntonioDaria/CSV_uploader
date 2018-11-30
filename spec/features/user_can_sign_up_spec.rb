@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.feature 'Sign up, log in, log out', type: :feature do
@@ -11,9 +9,9 @@ RSpec.feature 'Sign up, log in, log out', type: :feature do
   end
 
   scenario 'A user can sign up' do
-    sign_up('antonio@gmail.com')
-    expect(page).to have_content('Welcome! You have signed up successfully.')
-  end
+      sign_up('antonio@gmail.com')
+      expect(page).to have_content('Welcome! You have signed up successfully.')
+    end
 
   scenario 'Gets an error message if the email is invalid' do
     visit('/')
@@ -31,4 +29,5 @@ RSpec.feature 'Sign up, log in, log out', type: :feature do
     click_link('Logout')
     expect(page).to have_content('Log in')
   end
+
 end
