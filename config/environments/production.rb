@@ -75,11 +75,10 @@ Rails.application.configure do
       stub_responses:    Rails.env.test? # Optional, avoid hitting S3 actual during tests
     }
 
-    config.storage    = :aws
+    config.storage    = :s3
     config.aws_bucket = ENV.fetch('S3_BUCKET_NAME') # for AWS-side bucket access permissions config, see section below
     config.aws_acl    = 'public-read'
   end
-
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
