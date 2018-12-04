@@ -1,7 +1,10 @@
 class Book < ApplicationRecord
   require 'csv'
 
+
   def self.import(file)
+    uploader = CsvUploader.new
+    uploader.store!(file)
     CSV.foreach(file.path, headers: true) do |row|
 
       book_hash = row.to_hash
