@@ -45,10 +45,11 @@ Technologies Used in The Production of Csv Uploader;
   - Heroku
   - SimpleCov
   - Rubocop
+  - AWS 
   
 
 Feature to be completed:
-  - File valifdation
+  - File validation
   
 
   
