@@ -49,6 +49,6 @@ Technologies Used in The Production of Csv Uploader;
 
 Feature to be completed:
   - File valifdation
-  - Storage on AWS s3
+  
 
   
