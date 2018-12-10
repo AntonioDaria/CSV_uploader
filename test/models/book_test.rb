@@ -6,13 +6,14 @@ class BookTest < ActiveSupport::TestCase
     @book = Book.new(title: "The Notebook")
   end
 
-  test "book should be valid" do
-    assert @book.valid?
-  end
-
   test "title should be present" do
     @book.title = " "
     assert_not @book.valid?
+  end
+
+  test "id should be numeric" do
+    @book.id = 1
+    assert @book.valid?
   end
 
 end
