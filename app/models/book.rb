@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   require 'csv'
 
+  validates :title, presence: true
+  validates :id, numericality: true
 
   def self.import(file)
     uploader = CsvUploader.new
